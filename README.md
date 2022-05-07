@@ -1,4 +1,4 @@
-# ModularDynamicFeatureHilt
+# ModularAppTemplate
 
 An Android template project following a multi module approach with clean architecture. It has been built following Clean Architecture Principle, Repository Pattern, MVVM Architecture in the presentation layer as well as jetpack components.
 
