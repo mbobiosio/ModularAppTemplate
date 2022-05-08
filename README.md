@@ -79,9 +79,7 @@ This project is designed to be a barebone template for new apps.
 This project will continuously receive updates to improve overall codebase and other libraries and techniques to keep it up to date.
 
 ## Screenshots
-<img src="assets/home.png" alt="Home" width="250">
-<img src="assets/favorite.png" alt="Favorite" width="250">
-<img src="assets/account.png" alt="Account" width="250">
+<img src="assets/home.png" alt="Home" width="250"> <img src="assets/favorite.png" alt="Favorite" width="250"> <img src="assets/account.png" alt="Account" width="250">
 
 ## 📝 License
 This project is released under the MIT license.
