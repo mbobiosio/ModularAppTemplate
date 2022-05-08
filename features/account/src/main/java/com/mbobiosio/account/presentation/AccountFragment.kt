@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.mbobiosio.account.R
 import com.mbobiosio.account.databinding.FragmentAccountBinding
@@ -24,7 +25,12 @@ class AccountFragment : BaseBindingFragment() {
 
     override fun setupUI(view: View, savedInstanceState: Bundle?) {
         with(binding) {
-            title.text = viewModel.getDescription().plus(getString(R.string.account))
+            val description = viewModel.getDescription().plus(getString(R.string.account))
+            toolBar.title = description
+
+            fab.setOnClickListener {
+                Toast.makeText(activity, description, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

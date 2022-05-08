@@ -1,3 +1,7 @@
+import extensions.accountModuleDeps
+import extensions.instrumentationTestDeps
+import extensions.unitTestDeps
+
 plugins {
     id(Plugins.ANDROID_LIBRARY)
     kotlin(Plugins.ANDROID)
@@ -31,8 +35,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
@@ -42,31 +46,12 @@ android {
 
 dependencies {
 
-    //Modules
-    implementation(project(Modules.common))
-    implementation(project(Modules.data))
-    implementation(project(Modules.domain))
-
-    // Navigation Component
-    implementation(Libs.AndroidX.Navigation.fragment)
-
-    // Hilt
-    implementation(Libs.Dagger.hiltAndroid)
-    kapt(Libs.Dagger.hiltAndroidCompiler)
+    // Required dependencies
+    accountModuleDeps()
 
     // Unit Test
-    testImplementation(Libs.JUnit.junit)
-    testImplementation(Libs.AndroidX.Test.coreTesting)
-    testImplementation(Libs.Turbine.turbine)
-    testImplementation(Libs.Coroutines.test)
-    testImplementation(Libs.MockWebServer.mockwebserver)
+    unitTestDeps()
 
     // Android Test
-    androidTestImplementation(Libs.Turbine.turbine)
-    androidTestImplementation(Libs.AndroidX.Test.core)
-    androidTestImplementation(Libs.AndroidX.Test.rules)
-    androidTestImplementation(Libs.AndroidX.Test.Ext.junit)
-    androidTestImplementation(Libs.AndroidX.Test.espressoCore)
-    androidTestImplementation(Libs.MockWebServer.mockwebserver)
-    androidTestImplementation(Libs.MockWebServer.okhttpIdlingResource)
+    instrumentationTestDeps()
 }

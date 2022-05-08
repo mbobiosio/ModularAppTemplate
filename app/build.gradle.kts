@@ -1,3 +1,7 @@
+import extensions.appModuleDeps
+import extensions.instrumentationTestDeps
+import extensions.unitTestDeps
+
 plugins {
     id(Plugins.ANDROID_APPLICATION)
     kotlin(Plugins.ANDROID)
@@ -71,38 +75,12 @@ kapt {
 }
 
 dependencies {
-    implementation(project(Modules.common))
-    implementation(project(Modules.data))
-    implementation(project(Modules.domain))
-
-    //Feature Modules
-    implementation(project(Features.home))
-    implementation(project(Features.favorite))
-    implementation(project(Features.account))
-
-    // Navigation Component
-    implementation(Libs.AndroidX.Navigation.ui)
-    implementation(Libs.AndroidX.Navigation.fragment)
-    implementation(Libs.AndroidX.Navigation.dynamicFeaturesFragment)
-    androidTestImplementation(Libs.AndroidX.Navigation.testing)
-
-    // Hilt
-    implementation(Libs.Dagger.hiltAndroid)
-    kapt(Libs.Dagger.hiltAndroidCompiler)
+    // Required dependencies
+    appModuleDeps()
 
     // Unit Test
-    testImplementation(Libs.JUnit.junit)
-    testImplementation(Libs.AndroidX.Test.coreTesting)
-    testImplementation(Libs.Turbine.turbine)
-    testImplementation(Libs.Coroutines.test)
-    testImplementation(Libs.MockWebServer.mockwebserver)
+    unitTestDeps()
 
     // Android Test
-    androidTestImplementation(Libs.Turbine.turbine)
-    androidTestImplementation(Libs.AndroidX.Test.core)
-    androidTestImplementation(Libs.AndroidX.Test.rules)
-    androidTestImplementation(Libs.AndroidX.Test.Ext.junit)
-    androidTestImplementation(Libs.AndroidX.Test.espressoCore)
-    androidTestImplementation(Libs.MockWebServer.mockwebserver)
-    androidTestImplementation(Libs.MockWebServer.okhttpIdlingResource)
+    instrumentationTestDeps()
 }

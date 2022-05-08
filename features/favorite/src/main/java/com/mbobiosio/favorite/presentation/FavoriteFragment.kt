@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.mbobiosio.common.base.BaseBindingFragment
 import com.mbobiosio.favorite.R
 import com.mbobiosio.favorite.databinding.FragmentFavoriteBinding
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class FavoriteFragment : BaseBindingFragment() {
@@ -25,7 +25,12 @@ class FavoriteFragment : BaseBindingFragment() {
 
     override fun setupUI(view: View, savedInstanceState: Bundle?) {
         with(binding) {
-            title.text = viewModel.getDescription().plus(getString(R.string.favorite))
+            val description = viewModel.getDescription().plus(getString(R.string.favorite))
+
+            toolBar.title = description
+            fab.setOnClickListener {
+                Toast.makeText(activity, description, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

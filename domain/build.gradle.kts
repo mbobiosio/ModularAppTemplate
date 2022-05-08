@@ -1,5 +1,9 @@
+import extensions.domainModuleDeps
+import extensions.instrumentationTestDeps
+import extensions.unitTestDeps
+
 plugins {
-    id (Plugins.ANDROID_LIBRARY)
+    id(Plugins.ANDROID_LIBRARY)
     kotlin(Plugins.ANDROID)
 }
 
@@ -35,21 +39,12 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.common))
+    // Required dependencies
+    domainModuleDeps()
 
     // Unit Test
-    testImplementation(Libs.JUnit.junit)
-    testImplementation(Libs.AndroidX.Test.coreTesting)
-    testImplementation(Libs.Turbine.turbine)
-    testImplementation(Libs.Coroutines.test)
-    testImplementation(Libs.MockWebServer.mockwebserver)
+    unitTestDeps()
 
     // Android Test
-    androidTestImplementation(Libs.Turbine.turbine)
-    androidTestImplementation(Libs.AndroidX.Test.core)
-    androidTestImplementation(Libs.AndroidX.Test.rules)
-    androidTestImplementation(Libs.AndroidX.Test.Ext.junit)
-    androidTestImplementation(Libs.AndroidX.Test.espressoCore)
-    androidTestImplementation(Libs.MockWebServer.mockwebserver)
-    androidTestImplementation(Libs.MockWebServer.okhttpIdlingResource)
+    instrumentationTestDeps()
 }
