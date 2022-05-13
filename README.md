@@ -74,12 +74,33 @@ Files are suffixed with be defined Class types.
 - ViewModels are suffixed with **VM**. Ex: `LoginVM`
 - Repositories are suffixed with **Repo**. Ex: `SampleRepo`
 
+## Getting started
+
+There are a few ways to open this project.
+
+### Android Studio
+
+1. `Android Studio` -> `File` -> `New` -> `From Version control` -> `Git`
+2. Enter `git@github.com:mbobiosio/ModularAppTemplate.git` into URL field an press `Clone` button
+   3, Build the project and run on an android device or emulator
+
+### Command-line + Android Studio
+
+1. Run `git clone git@github.com:mbobiosio/ModularAppTemplate.git` command to clone project
+2. Open `Android Studio` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
+3. Build the project and run on an android device or emulator
+
 ## Conclusion
 This project is designed to be a barebone template for new apps.
 This project will continuously receive updates to improve overall codebase and other libraries and techniques to keep it up to date.
 
 ## Screenshots
 <img src="assets/home.png" alt="Home" width="250"> <img src="assets/favorite.png" alt="Favorite" width="250"> <img src="assets/account.png" alt="Account" width="250">
+
+### Author
+
+* [Mbuodile Obiosio](https://www.linkedin.com/in/mb-obiosio/)
+* [![Follow me](https://img.shields.io/twitter/follow/cazewonder?style=social)](https://twitter.com/cazewonder)
 
 ## 📝 License
 This project is released under the MIT license.
